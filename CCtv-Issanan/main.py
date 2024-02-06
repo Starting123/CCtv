@@ -27,10 +27,10 @@ while camera.isOpened():
     # คำนวณความแตกต่างระหว่างภาพ
     difference = cv.absdiff(screen1, screen2)
 
-    # แปลงภาพเป็นระดับสีเทา
+    # แปลงภาพเป็นระดับสีขาว
     white = cv.cvtColor(difference, cv.COLOR_RGB2GRAY)
 
-    # ทำการบลอร์ภาพเทา
+    # ทำการบลอร์ภาพขาว
     blur = cv.GaussianBlur(white, (5, 5), 0)
 
     # กำหนดค่าสิ้นสุด (threshold) เพื่อสร้างภาพขาวดำที่ตราบการเคลื่อนไหว
