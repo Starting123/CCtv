@@ -34,7 +34,7 @@ while camera.isOpened():
     blur = cv.GaussianBlur(gray, (5, 5), 0)
 
     # กำหนดค่าสิ้นสุด (threshold) เพื่อสร้างภาพขาวดำที่ตราบการเคลื่อนไหว
-    _, threshold = cv.threshold(blur, 20, 255, cv.THRESH_BINARY)
+    _, threshold = cv.threshold(blur, 50, 555, cv.THRESH_BINARY)
 
     # ขยายขนาดพื้นที่ที่เคลื่อนไหวด้วยการขยายขนาด (dilation)
     dilation = cv.dilate(threshold, None, iterations=5)
@@ -43,14 +43,14 @@ while camera.isOpened():
     contours, _, = cv.findContours(dilation, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
 
     # วาดขอบรอบการเคลื่อนไหวบนภาพต้นฉบับ
-    cv.drawContours(screen1, contours, -1, (0, 255, 0), 2)
+    cv.drawContours(screen1, contours, -1, (100, 2055, 100), 2)
     
     # ตรวจสอบและส่งข้อความผ่าน LINE Notify เมื่อตรวจพบการเคลื่อนไหว
     for movement in contours:
-        if cv.contourArea(movement) < 8000:
+        if cv.contourArea(movement) < 18000:
             continue
         x, y, height, width = cv.boundingRect(movement)
-        cv.rectangle(screen1, (x, y), (x+height, y+width), (0, 255, 0), 2)
+        cv.rectangle(screen1, (x, y), (x+height, y+width), (60, 255, 50), 2)
 
         notify = requests.post(url, headers=headers, data={'message': msg})
         print(notify.text)
