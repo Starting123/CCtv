@@ -1,4 +1,4 @@
-# เรียกใช้งานไลบรารี OpenCV และ requests
+# เรียกใช้งานไลบรารี OpenCV และ requests             DAwdawwwwwwwwwwdnigni
 import cv2 as cv
 import requests
 
@@ -13,7 +13,59 @@ token = 'YyC8BVO6omqWQ9SaE3O3SsTehmQvWBKxdC0mLrrkquB'
 headers = {
     'content-type': 'application/x-www-form-urlencoded',
     'Authorization': 'Bearer ' + token
+}แคมที่ติดตั้งในเครื่อง (ใช้หมายเลข 0)
+camera = cv.VideoCapture(0)
+
+# กำหนด URL ของ LINE Notify API และ Token ของคุณ
+url = 'https://notify-api.line.me/api/notify'
+token = 'YyC8BVO6omqWQ9SaE3O3SsTehmQvWBKxdC0mLrrkquB'
+
+# กำหนดหัวเสริม (headers) สำหรับ HTTP request ไปยัง LINE Notify
+headers = {
+    'content-type': 'application/x-www-form-urlencoded',
+    'Authorization': 'Bearer ' + token
 }
+
+# ข้อความที่จะส่งผ่าน LINE Notify เมื่อตรวจพบการเคลื่อนไหวแคมที่ติดตั้งในเครื่อง (ใช้หมายเลข 0)
+camera = cv.VideoCapture(0)
+
+# กำหนด URL ของ LINE Notify API และ Token ของคุณ
+url = 'https://notify-api.line.me/api/notify'
+token = 'YyC8BVO6omqWQ9SaE3O3SsTehmQvWBKxdC0mLrrkquB'
+
+# กำหนดหัวเสริม (headers) สำหรับ HTTP request ไปยัง LINE Notify
+headers = {
+    'content-type': 'application/x-www-form-urlencoded',
+    'Authorization': 'Bearer ' + token
+}
+
+# ข้อความที่จะส่งผ่าน LINE Notify เมื่อตรวจพบการเคลื่อนไหวแคมที่ติดตั้งในเครื่อง (ใช้หมายเลข 0)
+camera = cv.VideoCapture(0)
+
+# กำหนด URL ของ LINE Notify API และ Token ของคุณ
+url = 'https://notify-api.line.me/api/notify'
+token = 'YyC8BVO6omqWQ9SaE3O3SsTehmQvWBKxdC0mLrrkquB'
+
+# กำหนดหัวเสริม (headers) สำหรับ HTTP request ไปยัง LINE Notify
+headers = {
+    'content-type': 'application/x-www-form-urlencoded',
+    'Authorization': 'Bearer ' + token
+}
+
+# ข้อความที่จะส่งผ่าน LINE Notify เมื่อตรวจพบการเคลื่อนไหวแคมที่ติดตั้งในเครื่อง (ใช้หมายเลข 0)
+camera = cv.VideoCapture(0)
+
+# กำหนด URL ของ LINE Notify API และ Token ของคุณ
+url = 'https://notify-api.line.me/api/notify'
+token = 'YyC8BVO6omqWQ9SaE3O3SsTehmQvWBKxdC0mLrrkquB'
+
+# กำหนดหัวเสริม (headers) สำหรับ HTTP request ไปยัง LINE Notify
+headers = {
+    'content-type': 'application/x-www-form-urlencoded',
+    'Authorization': 'Bearer ' + token
+}
+
+# ข้อความที่จะส่งผ่าน LINE Notify เมื่อตรวจพบการเคลื่อนไหว
 
 # ข้อความที่จะส่งผ่าน LINE Notify เมื่อตรวจพบการเคลื่อนไหว
 msg = 'has movement'
@@ -27,7 +79,7 @@ while camera.isOpened():
     # คำนวณความแตกต่างระหว่างภาพ
     difference = cv.absdiff(screen1, screen2)
 
-    # แปลงภาพเป็นระดับสีเทา
+    # แปลงภาพเป็นระดับสีเทาเ
     gray = cv.cvtColor(difference, cv.COLOR_RGB2GRAY)
 
     # ทำการบลอร์ภาพเทา
@@ -60,4 +112,3 @@ while camera.isOpened():
         break
     
     cv.imshow('pyCCTV', screen1)
-
