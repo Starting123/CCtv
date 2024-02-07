@@ -27,7 +27,7 @@ while camera.isOpened():
     # คำนวณความแตกต่างระหว่างภาพ
     difference = cv.absdiff(screen1, screen2)
 
-    # แปลงภาพเป็นระดับสีเทา
+    # แปลงภาพเป็นระดับสีเทาเ
     gray = cv.cvtColor(difference, cv.COLOR_RGB2GRAY)
 
     # ทำการบลอร์ภาพเทา
