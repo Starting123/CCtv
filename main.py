@@ -60,4 +60,3 @@ while camera.isOpened():
         break
     
     cv.imshow('pyCCTV', screen1)
-
